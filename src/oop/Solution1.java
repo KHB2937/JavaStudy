@@ -1,5 +1,6 @@
 package oop;
 
+// 객체지향형 이란 무엇인가?
 public class Solution1 {
     public static void main(String[] args) {
         // ** 절차 지향형 프로그래밍 : 변수와 실행문 중심 (함수)의 프로그래밍.
