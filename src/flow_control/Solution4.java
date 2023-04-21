@@ -1,4 +1,4 @@
-package flow_controll;
+package flow_control;
 
 public class Solution4 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package flow_controll;
+package flow_control;
 // 같은 패키지 경로 안에 있으면 한 파일에 있는 듯이 해당 enum, class 등을 사용 가능.
 
 public class Solution2 {
