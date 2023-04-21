@@ -56,5 +56,21 @@ public class Solution1 {
         // DELETE
         map.remove("age");
         System.out.println("map = " + map);
+
+        // SEARCH, CONDITION
+        // 특정한 key가 있는가?
+        // Is there a specific key?
+        System.out.println("map.containsKey(\"name\") = " + map.containsKey("name"));
+        // 특정한 value가 있는가?
+        // Is there a specific value?
+        System.out.println("map.containsValue(\"male\") = " + map.containsValue("male"));
+
+        // 다른 형태의 데이터 표현
+        // key만 보고 싶을 때
+        System.out.println("map.keySet() = " + map.keySet());
+        // value만 보고 싶을 때
+        System.out.println("map.values() = " + map.values());
+        // key-value 쌍을 보고 싶으면
+        System.out.println("map.entrySet() = " + map.entrySet());
     }
 }
