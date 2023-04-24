@@ -1,4 +1,4 @@
-package oop.part2;
+package oop.part3;
 
 public class ZooKeeper {
     // feed(Tiger tiger)

@@ -1,4 +1,4 @@
-package oop.part2;
+package oop.part3;
 
 // 다형성 적용을 위한 클래스/인터페이스 응용
 public class Solution3 {

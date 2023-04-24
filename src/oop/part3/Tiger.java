@@ -1,4 +1,4 @@
-package oop.part2;
+package oop.part3;
 
 // 상속은 한쪽 방향으로, (부모 클래스 -> 자식 클래스) 1개만 가능
 // Interface 상속을 했을지라도 추가적으로 적용
