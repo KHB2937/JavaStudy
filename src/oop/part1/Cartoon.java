@@ -1,4 +1,5 @@
 package oop.part1;
+// oop 패키지 -> part1 : OOP의 서브패키지
 
 //public class Cartoon extends Object {
 public class Cartoon {
@@ -11,7 +12,7 @@ public class Cartoon {
     * Cartoon() {}
     * */
     // 생성자가 하나도 없으면, 그냥 얘가 있다고 취급.
-    Cartoon() {}
+    public Cartoon() {}
     // 생성자도 메소드의 일종이기 때문에,
     // 같은 이름이지만 다른 패러미터를 가진 메소드를 의미하는
     // '메소드 오버로딩' Method overloading
