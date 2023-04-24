@@ -1,4 +1,4 @@
-package oop;
+package oop.part1;
 
 public class HarryPorter implements Novel { // implements -> 빈 거 채우기
 

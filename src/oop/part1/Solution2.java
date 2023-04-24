@@ -1,4 +1,4 @@
-package oop;
+package oop.part1;
 
 public class Solution2 {
     public static void main(String[] args) {

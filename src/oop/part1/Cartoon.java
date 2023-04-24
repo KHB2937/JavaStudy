@@ -1,4 +1,4 @@
-package oop;
+package oop.part1;
 
 //public class Cartoon extends Object {
 public class Cartoon {
