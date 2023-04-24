@@ -1,9 +1,10 @@
-package oop.part3;
+package oop.part4;
 
 //public class Lion extends Animal {
 //}
 
-public class Lion extends Animal implements Predator, Barkable {
+//public class Lion extends Animal implements Predator, Barkable {
+public class Lion extends Predator implements Barkable { // Predator를 Animal을 상속하는 Abstract Class화를 해서 처리
     @Override
     public String getFood() {
 //        return "banana";
