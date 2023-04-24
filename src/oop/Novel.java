@@ -7,4 +7,9 @@ public interface Novel {
     void read(int page);
     void buy();
     void burn();
+
+    default void info() { // 1.8 <- 상속처럼 쓸 수 있다 <-
+//        System.out.println("이것은 소설입니다");
+        System.out.println("이것은 Social입니다");
+    }
 }
