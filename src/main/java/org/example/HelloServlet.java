@@ -9,8 +9,10 @@ import java.io.PrintWriter;
 
 public class HelloServlet extends HttpServlet {
     // CRUD. Web -> Read -> Get
+    // Web CRUD -> HTTP Verb (get, post, put, delete, patch ...)
+    // Servlet -> HTTP형태의 요청이 들어오면 그것을 해석해서 자바 코드를 활용하여 응답해줄 수 있는 프레임워크
 
-    // Get 요청이 들어오면 어떠한 응답을 줄 것이냐 (doGet) <- 브라우저에서 특정한 링크에 데이터를 요청
+    // Get 요청(인터넷 접속)이 들어오면 어떠한 응답을 줄 것이냐 (doGet) <- 브라우저에서 특정한 링크에 데이터를 요청
     @Override
     public void doGet(HttpServletRequest req,
                          HttpServletResponse resp) throws ServletException, IOException {
