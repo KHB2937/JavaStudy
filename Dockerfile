@@ -20,11 +20,11 @@ FROM tomcat:8.5-jdk11-openjdk-slim
 # 작업 디렉토리를 설정합니다.
 WORKDIR /usr/local/tomcat
 
-# 기본 webapps 폴더를 삭제합니다.
-RUN rm -rf webapps/*
+# 기본 ROOT 폴더를 삭제합니다.
+RUN rm -rf webapps/ROOT
 
-# 애플리케이션을 복사합니다.
-COPY myapp.war webapps/ROOT.war
+# WAR 파일을 Docker 이미지에 복사합니다.
+COPY --from=build /app/target/*.war webapps/ROOT.war
 
 # 포트를 노출시킵니다.
 EXPOSE 8080
