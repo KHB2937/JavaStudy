@@ -23,12 +23,6 @@ WORKDIR /usr/local/tomcat
 # 기본 ROOT 폴더를 삭제합니다.
 RUN rm -rf webapps/ROOT
 
-# Catalina/localhost 디렉토리를 생성합니다.
-RUN mkdir -p conf/Catalina/localhost
-
-# webapps/ROOT 디렉토리를 생성합니다.
-RUN mkdir -p webapps/ROOT
-
 # WAR 파일을 Docker 이미지에 복사합니다.
 COPY --from=build /app/target/*.war webapps/ROOT.war
 
