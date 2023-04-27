@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <%@ page import="org.example.aladin.model.Item" %>
+<%@ page import="org.example.aladin.model.Comment" %>
+<%@ page import="org.example.aladin.service.CommentService" %>
+<%@ page import="javax.persistence.*" %>
+<%@ page import="java.util.List" %>
 
 <html>
 <head>
@@ -81,6 +86,33 @@
                <td><%= item.getMileage() %></td>
            </tr>
         </table>
+       <hr>
+
+           <h2>댓글 목록</h2>
+
+           <% EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPU");
+              EntityManager entityManager = entityManagerFactory.createEntityManager();
+              CommentService commentService = new CommentService(entityManager);
+              List<Comment> comments = commentService.findCommentsByItemId(item.getItemId());
+
+              for (Comment comment : comments) { %>
+               <div>
+                   <p><%= comment.getContent() %></p>
+                   <small><%= comment.getCreatedAt() %></small>
+               </div>
+           <% } %>
+
+           <hr>
+
+           <h2>댓글 작성</h2>
+                <form method="POST" action="../comment">
+                    <input type="hidden" name="itemId" value="<%= item.getItemId() %>">
+                    <div class="form-group">
+                        <textarea class="form-control" name="content" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">댓글 작성</button>
+                </form>
+
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
