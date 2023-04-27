@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="org.example.aladin.model.Item" %>
 
 <html>
@@ -10,8 +11,12 @@
 </head>
 <body>
     <div class="container">
+        <div class="my-4">
+            <a href="javascript:history.back()" class="btn btn-secondary">&laquo; Back</a>
+        </div>
         <h1 class="my-4">Item Detail</h1>
         <table class="table table-bordered">
+            <%-- item 객체 가져오기 --%>
             <%
             Object obj = request.getAttribute("item");
                 Item item = null;

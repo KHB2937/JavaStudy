@@ -28,7 +28,8 @@
                     <td><%= item.getItemId() %></td>
                     <td><%= item.getTitle() %></td>
                     <td><%= item.getAuthor() %></td>
-                    <td><a href="items/<%= item.getItemId() %>">Detail</a></td> <!-- 개별 아이템 페이지 링크 추가 -->
+                    <!-- 개별 아이템 페이지 링크 추가 -->
+                    <td><a href="items/<%= item.getItemId() %>">자세히 보기</a></td>
                 </tr>
                 <% } %>
             </tbody>

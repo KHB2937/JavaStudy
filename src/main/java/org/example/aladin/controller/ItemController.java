@@ -45,7 +45,8 @@ public class ItemController extends HttpServlet {
             // id가 존재하면 해당 아이템 상세 페이지로 이동
             Item item = itemService.findItemById(id);
             request.setAttribute("item", item);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/detail.jsp");
+            // 은닉 폴더
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/detail.jsp");
             dispatcher.forward(request, response);
         } else {
             // id가 존재하지 않으면 아이템 리스트 페이지로 이동
@@ -70,7 +71,8 @@ public class ItemController extends HttpServlet {
             request.setAttribute("totalPages", totalPages);
 
             // JSP로 포워딩
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/list.jsp");
+            // 은닉 폴더
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/list.jsp");
             dispatcher.forward(request, response);
         }
 
