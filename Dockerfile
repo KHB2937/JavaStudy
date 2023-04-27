@@ -30,15 +30,6 @@ RUN mkdir -p /usr/local/tomcat/webapps/ROOT
 # WAR 파일을 Docker 이미지에 복사합니다.
 COPY --from=build /app/target/*.war webapps/ROOT.war
 
-# 유저 추가
-RUN groupadd -r tomcat && useradd -r -g tomcat tomcat
-
-# ROOT 폴더와 WAR 파일의 소유자를 tomcat으로 변경합니다.
-RUN chown -R tomcat:tomcat /usr/local/tomcat/webapps/ROOT*
-
-# ROOT 폴더와 WAR 파일에 대한 권한을 변경합니다.
-RUN chmod -R 755 /usr/local/tomcat/webapps/ROOT*
-
 # 포트를 노출시킵니다.
 EXPOSE 8080
 
