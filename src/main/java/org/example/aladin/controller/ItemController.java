@@ -46,7 +46,7 @@ public class ItemController extends HttpServlet {
             Item item = itemService.findItemById(id);
             request.setAttribute("item", item);
             // 은닉 폴더
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/detail.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("pages/detail.jsp");
             dispatcher.forward(request, response);
         } else {
             // id가 존재하지 않으면 아이템 리스트 페이지로 이동
@@ -72,7 +72,7 @@ public class ItemController extends HttpServlet {
 
             // JSP로 포워딩
             // 은닉 폴더
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/pages/list.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("pages/list.jsp");
             dispatcher.forward(request, response);
         }
 
