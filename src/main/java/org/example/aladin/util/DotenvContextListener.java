@@ -5,7 +5,6 @@ import io.github.cdimascio.dotenv.Dotenv;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import java.nio.file.Paths;
 
 @WebListener
 public class DotenvContextListener implements ServletContextListener {
