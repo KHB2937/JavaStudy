@@ -39,12 +39,10 @@ public class DotenvContextListener implements ServletContextListener {
             if (dbUrl == null || dbUser == null || dbPassword == null) {
                 System.out.println("* 환경 변수와 .env 파일에서 DB 연결 정보를 가져올 수 없습니다.");
             }
-
-            System.out.println("DB_URL: " + dbUrl);
-            System.out.println("DB_USER: " + dbUser);
-            System.out.println("DB_PASSWORD: " + dbPassword);
         }
-
+        System.out.println("DB_URL: " + dbUrl);
+        System.out.println("DB_USER: " + dbUser);
+        System.out.println("DB_PASSWORD: " + dbPassword);
     }
 
     @Override
