@@ -3,8 +3,5 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <servlet-mapping>
-    <servlet-name>jsp</servlet-name>
-    <url-pattern>/WEB-INF/pages/*.jsp</url-pattern>
-  </servlet-mapping>
+
 </web-app>
