@@ -25,6 +25,8 @@ RUN rm -rf webapps/ROOT
 
 # 새로운 폴더를 생성합니다.
 RUN mkdir -p /usr/local/tomcat/conf/Catalina/localhost
+RUN mkdir -p /usr/local/tomcat/webapps/ROOT
+RUN chmod -R 777 /usr/local/tomcat/webapps/ROOT
 
 # WAR 파일을 Docker 이미지에 복사합니다.
 COPY --from=build /app/target/*.war webapps/ROOT.war
