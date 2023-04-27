@@ -14,11 +14,11 @@ RUN groupadd -r tomcat && useradd -r -g tomcat tomcat
 RUN mkdir -p /usr/local/tomcat/conf/Catalina/localhost
 RUN mkdir -p /usr/local/tomcat/webapps/ROOT
 
-# 권한을 설정합니다.
-RUN chown -R tomcat:tomcat /usr/local/tomcat
-
 # WAR 파일을 Docker 이미지에 복사합니다.
 COPY target/*.war webapps/ROOT.war
+
+# 권한을 설정합니다.
+RUN chown -R tomcat:tomcat /usr/local/tomcat
 
 # WAR 파일의 소유자와 권한을 변경합니다.
 RUN chown tomcat:tomcat webapps/ROOT.war && chmod 644 webapps/ROOT.war
