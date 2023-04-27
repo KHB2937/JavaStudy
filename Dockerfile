@@ -1,4 +1,20 @@
 # 베이스 이미지를 선택합니다.
+FROM maven:3.8.3-openjdk-11-slim AS build
+
+# 작업 디렉토리를 설정합니다.
+WORKDIR /app
+
+# 프로젝트의 pom.xml 파일을 복사합니다.
+COPY pom.xml .
+
+# Maven으로 라이브러리를 다운로드합니다.
+RUN mvn dependency:go-offline
+
+# 소스 코드를 복사하고 WAR 파일을 빌드합니다.
+COPY src ./src
+RUN mvn package
+
+# Tomcat 이미지를 기반으로 새로운 이미지를 생성합니다.
 FROM tomcat:8.5-jdk11-openjdk-slim
 
 # 작업 디렉토리를 설정합니다.
@@ -13,6 +29,12 @@ RUN mkdir -p /usr/local/tomcat/webapps/ROOT
 
 # WAR 파일을 Docker 이미지에 복사합니다.
 COPY target/*.war webapps/ROOT.war
+
+# 권한을 설정합니다.
+RUN chown -R tomcat:tomcat /usr/local/tomcat
+
+# WAR 파일의 소유자와 권한을 변경합니다.
+RUN chown tomcat:tomcat webapps/ROOT.war && chmod 644 webapps/ROOT.war
 
 # 포트를 노출시킵니다.
 EXPOSE 8080
