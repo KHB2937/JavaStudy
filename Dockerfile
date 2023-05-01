@@ -1,30 +1,11 @@
-# Base image
-FROM openjdk:11-jre-slim
-
-# Working directory
+FROM maven:3.6.0-jdk-11-slim AS build
 WORKDIR /app
-
-# Copy Maven wrapper files
-COPY mvnw .
-COPY .mvn .mvn
-
-# Copy pom.xml file
 COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY src/ /app/src/
+RUN mvn package
 
-# Download dependencies
-RUN ./mvnw dependency:go-offline
-
-# Copy application code
-COPY src src
-
-# Build application
-RUN ./mvnw clean package
-
-# Copy executable JAR file
-COPY target/*.jar app.jar
-
-# Expose port
-EXPOSE 8080
-
-# Run application
+FROM openjdk:11-jre-slim
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 CMD ["java", "-jar", "app.jar"]
