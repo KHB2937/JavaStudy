@@ -1,0 +1,25 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- 서블릿 등록 -->
+  <servlet> <!-- 있는 서블릿 다 나와봐, 그리고 주소 어딘지 불어 -->
+    <servlet-name>HelloServlet</servlet-name>
+    <!-- class -> 경로 -> 어디에 위치하는가? -> src/main/java/... -->
+    <servlet-class>org.example.HelloServlet</servlet-class>
+  </servlet>
+
+  <!-- 서블릿 연결 -->
+  <!-- 서블릿과 URL은 어떤 관계다? 1:다 (패턴) -->
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name> <!-- 등록된 서블릿 -->
+    <url-pattern>/hello</url-pattern> <!-- 어느 웹 주소에 연결될 것인지 -->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name> <!-- 등록된 서블릿 -->
+    <url-pattern>/hello2</url-pattern> <!-- 어느 웹 주소에 연결될 것인지 -->
+  </servlet-mapping>
+</web-app>
