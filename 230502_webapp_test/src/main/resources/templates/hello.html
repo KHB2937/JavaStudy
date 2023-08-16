@@ -1,0 +1,11 @@
+<!DOCTYPE html> <!-- HTML5 문서 유형을 지정하는 선언입니다. -->
+<html xmlns:th="http://www.thymeleaf.org"> <!-- Thymeleaf 템플릿 엔진에서 사용되는 `th` 네임스페이스를 선언하는 코드입니다. -->
+<head>
+    <title>Hello World Example</title> <!-- 문서 제목을 나타내는 태그입니다. -->
+</head>
+<body>
+<h1>Hello, <span th:text="${name}"></span>!</h1>
+<!-- "Hello, [name]!"이라는 텍스트를 출력하는 h1 태그입니다. -->
+<!-- span 태그 안에 th:text 속성을 이용해 모델에서 받아온 name 값을 출력합니다. -->
+</body>
+</html>
